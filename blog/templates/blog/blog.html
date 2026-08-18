@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Exemplo de como usar uma variável do Django no title: -->
+    <!-- <title>{{ post.titulo }} | DevBlog</title> -->
+    <title>Entendendo Decorators em Python | DevBlog</title>
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --text-main: #1f2937;
+            --text-light: #4b5563;
+            --bg-color: #ffffff;
+            --border-color: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            font-size: 1.125rem;
+        }
+
+        nav {
+            padding: 1.5rem 5%;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .article-container {
+            max-width: 800px; /* Largura ideal para leitura */
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+
+        .article-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .article-header h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #111827;
+        }
+
+        .article-meta {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .article-content h3 {
+            margin: 2.5rem 0 1rem 0;
+            color: #111827;
+        }
+
+        /* Estilo para simular blocos de código no blog */
+        pre {
+            background-color: #1f2937;
+            color: #f3f4f6;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/">&larr; Voltar para a Home</a>
+    </nav>
+
+    <main class="article-container">
+        <header class="article-header">
+            <!-- <h1>{{ post.titulo }}</h1> -->
+            <h1>Entendendo Decorators em Python</h1>
+            <div class="article-meta">
+                <!-- Escrito por {{ post.autor }} em {{ post.data_publicacao|date:"d/m/Y" }} -->
+                Escrito por Matheus em 12 de Abril de 2026
+            </div>
+        </header>
+
+        <article class="article-content">
+            <!-- {{ post.conteudo|safe }} -->
+            <p>Decorators são um dos recursos mais poderosos e elegantes da linguagem Python. Eles permitem que você modifique o comportamento de uma função ou classe sem precisar alterar o código original delas.</p>
+            
+            <h3>Como funcionam?</h3>
+            <p>Em essência, um decorator é uma função que recebe outra função como argumento e retorna uma nova função. Isso é muito útil para coisas como verificação de autenticação, logs, ou medição de tempo de execução.</p>
+
+            <pre><code>@meu_decorator
+def minha_funcao():
+    print("Executando a função!")</code></pre>
+
+            <p>Se você está construindo uma API com ferramentas modernas de backend, certamente vai se deparar com esse padrão na hora de criar rotas de acesso.</p>
+        </article>
+    </main>
+
+</body>
+</html>

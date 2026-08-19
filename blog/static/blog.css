@@ -1,0 +1,77 @@
+:root {
+    --primary-color: #4f46e5;
+    --text-main: #1f2937;
+    --text-light: #4b5563;
+    --bg-color: #ffffff;
+    --border-color: #e5e7eb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.8;
+    font-size: 1.125rem;
+}
+
+nav {
+    padding: 1.5rem 5%;
+    border-bottom: 1px solid var(--border-color);
+}
+
+nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.article-container {
+    max-width: 800px;
+    /* Largura ideal para leitura */
+    margin: 4rem auto;
+    padding: 0 5%;
+}
+
+.article-header {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.article-header h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #111827;
+}
+
+.article-meta {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.article-content p {
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+}
+
+.article-content h3 {
+    margin: 2.5rem 0 1rem 0;
+    color: #111827;
+}
+
+/* Estilo para simular blocos de código no blog */
+pre {
+    background-color: #1f2937;
+    color: #f3f4f6;
+    padding: 1.5rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}

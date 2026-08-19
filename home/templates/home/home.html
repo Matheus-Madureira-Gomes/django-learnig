@@ -1,96 +1,10 @@
-<!DOCTYPE html>
+{% load static%} <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevBlog | Início</title>
-    <style>
-        :root {
-            --primary-color: #4f46e5;
-            --text-main: #1f2937;
-            --text-muted: #6b7280;
-            --bg-color: #f3f4f6;
-            --card-bg: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: system-ui, -apple-system, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: var(--card-bg);
-            padding: 2rem 5%;
-            text-align: center;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-
-        header h1 {
-            color: var(--primary-color);
-            font-size: 2.5rem;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 5%;
-        }
-
-        .grid-posts {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-        }
-
-        .card h2 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .card h2 a {
-            text-decoration: none;
-            color: var(--text-main);
-        }
-
-        .card h2 a:hover {
-            color: var(--primary-color);
-        }
-
-        .meta {
-            font-size: 0.875rem;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-        }
-
-        .leia-mais {
-            display: inline-block;
-            margin-top: 1rem;
-            color: var(--primary-color);
-            font-weight: 600;
-            text-decoration: none;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static "home.css" %}">
 </head>
 <body>
 
@@ -102,18 +16,13 @@
     <main class="container">
         <div class="grid-posts">
             
-            <!-- Simulando um loop de templates do Django -->
-            <!-- Apague os cards estáticos abaixo e use as tags quando for integrar -->
-            <!-- {% for post in posts %} -->
             <article class="card">
-                <!-- <h2><a href="#">{{ post.titulo }}</a></h2> -->
                 <h2><a href="#">Entendendo Decorators em Python</a></h2>
                 <div class="meta">Publicado em 12 de Abril</div>
                 <!-- <p>{{ post.resumo }}</p> -->
                 <p>Descubra como os decorators podem deixar seu código mais limpo e reutilizável, adicionando funcionalidades de forma elegante.</p>
-                <a href="#" class="leia-mais">Ler artigo completo &rarr;</a>
+                <a href="{% url 'blog' %}" class="leia-mais">Ler artigo completo &rarr;</a>
             </article>
-            <!-- {% endfor %} -->
 
             <article class="card">
                 <h2><a href="#">Primeiros passos com FastAPI</a></h2>
@@ -122,13 +31,17 @@
                 <a href="#" class="leia-mais">Ler artigo completo &rarr;</a>
             </article>
 
-            <article class="card">
-                <h2><a href="#">Modelagem de Banco de Dados</a></h2>
-                <div class="meta">Publicado em 05 de Abril</div>
-                <p>Dicas essenciais para estruturar tabelas relacionais eficientes e garantir a integridade dos seus dados no backend.</p>
-                <a href="#" class="leia-mais">Ler artigo completo &rarr;</a>
-            </article>
+            
+            {% block posts %}
+                {%for post in posts%}
+                    {% include 'home/post_block.html'%}
+                {% endfor %}
+            {% endblock posts %}
+                
+            
 
+
+            
         </div>
     </main>
 

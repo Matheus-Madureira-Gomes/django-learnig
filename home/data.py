@@ -2,8 +2,8 @@ posts = [
   {
     "userId": 1,
     "id": 1,
-    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+    "title": "Fechamento de lojas da Casas Bahia",
+    "body": "O plano apresentado pela Casas Bahia de fechar 298 lojas tem potencial para impactar mercado imobiliário do país, com a menor participação da varejista na ocupação de pontos comerciais, mas manutenção de galpões logísticos, segundo profissionais do setor."
   },
   {
     "userId": 1,
